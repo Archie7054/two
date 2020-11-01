@@ -56,8 +56,8 @@
   <artifactId>docker-maven-plugin</artifactId>
   <version>0.4.13</version>
   <configuration>
-    <imageName>172.17.0.3:5000/archie/myapp:v01</imageName>
-    <baseImage>172.17.0.3:5000/archie/openjdk:alpine</baseImage>
+    <imageName>${env.imagename}:${env.version}</imageName>
+    <baseImage>${env.baseimagename}</baseImage>
     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
     <resources>
       <resource>
