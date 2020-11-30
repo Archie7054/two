@@ -51,13 +51,32 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!-- program one
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>0.4.13</version>
+            <configuration>
+                <imageName>172.17.0.3:5000/archie/one:v01</imageName>
+                <baseImage>172.17.0.3:5000/archie/openjdk:alpine</baseImage>
+                <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
+            </configuration>
+        </plugin>  -->
+<!-- program two & three-->
+           <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>172.17.0.3:5000/archie/one:v01</imageName>
-                    <baseImage>172.17.0.3:5000/archie/openjdk:alpine</baseImage>
+                    <imageName>${env.imagename}:${env.version}</imageName>
+                    <baseImage>${env.baseimagename}</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
                         <resource>
@@ -68,6 +87,7 @@
                     </resources>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
