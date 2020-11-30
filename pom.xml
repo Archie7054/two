@@ -51,12 +51,12 @@
 
     <build>
         <plugins>
-        <!--    <plugin>
+            <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
                 <configuration>
-                    <imageName>172.17.0.3:5000/archie/myapp:v01</imageName>
+                    <imageName>172.17.0.3:5000/archie/one:v01</imageName>
                     <baseImage>172.17.0.3:5000/archie/openjdk:alpine</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
@@ -67,7 +67,7 @@
                         </resource>
                     </resources>
                 </configuration>
-            </plugin> -->
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
