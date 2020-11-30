@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/one")
 public class HelloWorldController {
-    @RequestMapping("/say")
+    @RequestMapping("/sayhello")
     public String say(){
-        return "Hello,This is Version 1104";
+        return "Hello,This is Version 1101";
     }
 }
